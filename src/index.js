@@ -6,10 +6,20 @@ import App from './App'
 import reducer from './redux'
 
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import registerServiceWorker from './registerServiceWorker'
+import promiseMiddleware from 'redux-promise-middleware'
 
-const store = createStore(reducer)
+// const store = createStore(
+//   reducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// )
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(
+  reducer,
+  composeEnhancers(applyMiddleware(promiseMiddleware()))
+)
 
 ReactDOM.render(
   <Provider store={store}>
