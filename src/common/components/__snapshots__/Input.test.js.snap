@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> matches snapshot 1`] = `
+<div
+  className="field"
+>
+  <label
+    className="label"
+  >
+    Email
+  </label>
+  <div
+    className="control  "
+  >
+    <input
+      className="input "
+      onChange={[Function]}
+      placeholder="Email input"
+      type="email"
+      value={undefined}
+    />
+  </div>
+</div>
+`;

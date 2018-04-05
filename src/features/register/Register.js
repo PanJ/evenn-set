@@ -20,7 +20,7 @@ const Container = styled.div.attrs({
   }
 `
 
-class Register extends Component {
+export class Register extends Component {
   componentDidMount() {
     const updateCountdown = () => {
       const millis = closeTime.diff(moment())
@@ -35,7 +35,7 @@ class Register extends Component {
     }
     updateCountdown()
     this.props.onFormReset()
-    // this.intervalId = setInterval(updateCountdown, 1000)
+    this.intervalId = setInterval(updateCountdown, 1000)
   }
   componentWillUnmount() {
     clearInterval(this.intervalId)
