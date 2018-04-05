@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bulma/css/bulma.css'
 import './index.css'
-import App from './App'
+import Routes from './Routes'
 import reducer from './rootReducer'
 
 import { Provider } from 'react-redux'
@@ -25,7 +25,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <Routes />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

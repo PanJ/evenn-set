@@ -3,6 +3,7 @@ import moment from 'moment'
 import { connect } from 'react-redux'
 import { setFormData, resetFormData } from './redux'
 import styled from 'styled-components'
+import Input from '../../common/components/Input'
 
 const closeTime = moment('2018-04-06 12:00')
 
@@ -70,38 +71,22 @@ class Register extends Component {
         <Container size="large">
           <h1 className="title">Evenn Registration Form</h1>
           <p>{countdown}</p>
-          <div className="field">
-            <label className="label">Name</label>
-            <div className="control">
-              <input
-                value={name}
-                onChange={e => onFormDataChange('name', e.target.value)}
-                className="input"
-                type="text"
-                placeholder="Text input"
-              />
-            </div>
-          </div>
-
-          <div className="field">
-            <label className="label">Email</label>
-            <div className="control has-icons-left has-icons-right">
-              <input
-                value={email}
-                onChange={e => onFormDataChange('email', e.target.value)}
-                className="input is-danger"
-                type="email"
-                placeholder="Email input"
-              />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope" />
-              </span>
-              <span className="icon is-small is-right">
-                <i className="fas fa-exclamation-triangle" />
-              </span>
-            </div>
-            <p className="help is-danger">This email is invalid</p>
-          </div>
+          <Input
+            value={name}
+            onChange={value => onFormDataChange('name', value)}
+            label="Name"
+            icon="user"
+            placeholder="Name input"
+          />
+          <Input
+            value={email}
+            onChange={value => onFormDataChange('email', value)}
+            label="Email"
+            type="email"
+            icon="envelope"
+            placeholder="Email input"
+            error="Invalid Email Address"
+          />
 
           <div className="field">
             <label className="label">Ticket Type</label>

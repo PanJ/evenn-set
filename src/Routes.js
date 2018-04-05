@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Register from './Register'
+import Register from './features/register/Register'
 
 const Home = () => <div>Home</div>
 const Success = () => <div>Success</div>
